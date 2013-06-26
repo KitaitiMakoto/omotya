@@ -13,7 +13,7 @@ http {
 
   server {
     listen      <%= node['nginx']['port'] %>;
-    server_name localhost;
+    server_name <%= node['nginx']['server_name'] %>;
     location / {
       root  /usr/share/nginx/html;
       index index.html;

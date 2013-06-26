@@ -1,6 +1,7 @@
 {
   "nginx": {
-    "port": 80
+    "port": 80,
+    "server_name": "omotya"
   },
   "run_list":[
     "ruby",
