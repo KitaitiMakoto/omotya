@@ -3,6 +3,7 @@
     "port": 80
   },
   "run_list":[
+    "ruby",
     "yum::epel",
     "nginx",
     "iptables"
