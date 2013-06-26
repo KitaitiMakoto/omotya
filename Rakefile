@@ -1,3 +1,4 @@
+require 'rake/clean'
 require 'rake'
 require 'rspec/core/rake_task'
 
