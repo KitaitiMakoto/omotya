@@ -22,7 +22,7 @@ end
 
 bash "ruby" do
   cwd "/usr/local/src"
-  only_if { RUBY_VERSION < "2.0.0" }
+  not_if { `/usr/local/bin/ruby -v` =~ /\Aruby 2\.0/ }
   code <<-CODE
     wget #{ruby_src}
     tar xjf #{File.basename(ruby_src)}
@@ -34,5 +34,6 @@ bash "ruby" do
 end
 
 gem_package "bundler" do
+  gem_binary '/usr/local/bin/gem'
   action :install
 end
