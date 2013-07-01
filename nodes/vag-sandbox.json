@@ -1,11 +1,13 @@
 {
+  "gem": {
+    "binary": "/usr/local/bin/gem"
+  },
   "nginx": {
     "port": 80,
     "server_name": "omotya"
   },
   "run_list":[
     "ruby",
-    "yum::epel",
     "nginx",
     "iptables"
   ]
