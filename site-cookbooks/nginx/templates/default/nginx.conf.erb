@@ -17,9 +17,14 @@ http {
   server {
     listen      <%= node['nginx']['port'] %>;
     server_name <%= node['nginx']['server_name'] %>;
+    passenger_app_root <%= node["nginx"]["app_root"] %>;
     location / {
-      root  /usr/share/nginx/html;
+      root  <%= node["nginx"]["app_root"] %>/public;
       index index.html;
+      passenger_enabled on;
+      location /components {
+        try_files $uri $uri/index.html =404;
+      }
     }
   }
 }

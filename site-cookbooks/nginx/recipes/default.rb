@@ -22,6 +22,14 @@ user "nginx" do
   action   [:create, :manage]
 end
 
+directory node["nginx"]["app_root"] do
+  owner  "nginx"
+  group  "nginx"
+  mode   0755
+  action [:create]
+  recursive true
+end
+
 directory "/var/log/nginx" do
   owner  "nginx"
   group  "nginx"
