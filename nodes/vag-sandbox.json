@@ -10,6 +10,7 @@
     "scm",
     "ruby",
     "nginx",
+    "nodejs",
     "iptables",
     "emacs",
     "tmux"
