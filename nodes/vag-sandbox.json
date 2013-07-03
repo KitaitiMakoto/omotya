@@ -9,6 +9,8 @@
   "run_list":[
     "ruby",
     "nginx",
-    "iptables"
+    "iptables",
+    "emacs",
+    "tmux"
   ]
 }
