@@ -71,6 +71,15 @@ template "nginx.conf" do
   notifies :reload, 'service[nginx]'
 end
 
+template "mime.types" do
+  path "#{node["nginx"]["prefix"]}/conf/mime.types"
+  source "mime.types"
+  owner "root"
+  group "root"
+  mode 0644
+  notifies :reload, "service[nginx]"
+end
+
 service "nginx" do
   supports :status => true, :restart => true, :reload => true
   action [ :enable, :start]
